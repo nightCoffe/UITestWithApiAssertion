@@ -10,6 +10,7 @@ import org.openqa.selenium.Cookie;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static filters.LogFilter.logFilter;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
@@ -24,6 +25,7 @@ public class DemoWebShopTest extends TestBase {
         step("Get cookie by api and set it to browser", () -> {
             authorizationCookie =
                     given()
+                            .filter(logFilter().withCustomTemplates())
                             .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                             .formParam("Email", webConfig.userLogin())
                             .formParam("Password", webConfig.userPassword())
@@ -61,6 +63,7 @@ public class DemoWebShopTest extends TestBase {
         step("Get cookie by api and set it to browser", () -> {
             authorizationCookie =
                     given()
+                            .filter(logFilter().withCustomTemplates())
                             .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                             .formParam("Email", webConfig.userLogin())
                             .formParam("Password", webConfig.userPassword())
