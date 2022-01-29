@@ -21,4 +21,7 @@ public interface UserConfig extends Config {
 
     @Key("userPassword")
     String userPassword();
+
+    @Key("remoteUrl")
+    String remoteUrl();
 }
