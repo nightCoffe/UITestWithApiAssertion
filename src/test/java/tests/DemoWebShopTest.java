@@ -53,7 +53,6 @@ public class DemoWebShopTest extends TestBase {
             $(".account").shouldBe(Condition.visible)
                     .shouldHave(Condition.text("fvfny7uz6nqu@mail.ru"));
         });
-
     }
 
     @Test

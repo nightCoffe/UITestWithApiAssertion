@@ -16,7 +16,6 @@ public class LogFilter {
         FILTER.setRequestTemplate("request.ftl");
         FILTER.setResponseTemplate("response.ftl");
         return FILTER;
-
     }
 
     private static class InitLogFilter {
